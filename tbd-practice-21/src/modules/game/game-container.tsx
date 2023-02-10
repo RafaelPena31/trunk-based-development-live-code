@@ -4,6 +4,8 @@ import GameHeader from "./components/header/game-header";
 import ResultContainer from "./components/result/result-container";
 import { GameStatusType } from "./game-types";
 import "./game-container.css";
+import ControlContainer from "./components/control/control-container";
+import { createFalse } from "typescript";
 
 export default function GameContainer() {
   const [status, setStatus] = useState<GameStatusType>("start");
@@ -41,7 +43,10 @@ export default function GameContainer() {
 
       <CardGroup countValueList={countValues} />
 
-      {/* TODO: CONTROL SYSTEM */}
+      <ControlContainer
+        isStarted={isStarted}
+        onHandleClickAddCard={onHandleClickAddCard}
+      />
 
       <ResultContainer isResult={isResult} isVictory={isVictory} />
     </div>
