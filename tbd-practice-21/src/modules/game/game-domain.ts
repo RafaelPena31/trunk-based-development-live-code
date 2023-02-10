@@ -1,1 +1,1 @@
-export const getCurrentGameStatusTypeStart = (started: boolean) => started ? 'start' : 'started'
+export {};

@@ -4,8 +4,6 @@ import GameHeader from "./components/header/game-header";
 import ResultContainer from "./components/result/result-container";
 import { GameStatusType } from "./game-types";
 import "./game-container.css";
-import ControlContainer from "./components/control/control-container";
-import { createFalse } from "typescript";
 
 export default function GameContainer() {
   const [status, setStatus] = useState<GameStatusType>("start");
@@ -22,9 +20,7 @@ export default function GameContainer() {
   );
 
   const onHandleClickControl = (currentStatus: GameStatusType) => {
-    setCountValues([]);
-    setComputerTotalValue(0);
-    setStatus(currentStatus);
+    /* TODO */
   };
 
   const onHandleClickResult = () => {
@@ -47,10 +43,7 @@ export default function GameContainer() {
 
       <CardGroup countValueList={countValues} />
 
-      <ControlContainer
-        isStarted={isStarted}
-        onHandleClickAddCard={onHandleClickAddCard}
-      />
+      {/* TODO */}
 
       <ResultContainer isResult={isResult} isVictory={isVictory} />
     </div>
