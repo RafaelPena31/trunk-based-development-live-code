@@ -1,0 +1,9 @@
+.game-container__header {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+.game-container__header__btn-group button:nth-child(2) {
+  margin-left: 8px;
+}
