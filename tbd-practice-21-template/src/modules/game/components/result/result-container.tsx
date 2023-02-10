@@ -14,11 +14,7 @@ function ResultContainer({ isResult, isVictory }: ResultContainerProps) {
   const victoryText = "";
 
   if (isResult) {
-    return (
-      <Title level={2} type={type}>
-        {victoryText}
-      </Title>
-    );
+    return <Title level={2}>{victoryText}</Title>;
   }
 
   return null;

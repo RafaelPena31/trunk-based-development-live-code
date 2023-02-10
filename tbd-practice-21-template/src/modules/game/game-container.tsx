@@ -10,31 +10,23 @@ export default function GameContainer() {
   const [countValues, setCountValues] = useState<number[]>([]);
   const [computerTotalValue, setComputerTotalValue] = useState(0);
 
-  const totalValue = useMemo(() => /* TODO */, [countValues]);
+  const totalValue = useMemo(() => /* TODO */ 0, [countValues]);
 
-  const isStarted = useMemo(() => /* TODO */, [status]);
-  const isResult = useMemo(() => /* TODO */, [status]);
+  const isStarted = useMemo(() => /* TODO */ false, [status]);
+  const isResult = useMemo(() => /* TODO */ false, [status]);
   const isVictory = useMemo(
-    () => /* TODO */,
+    () => /* TODO */ false,
     [totalValue, computerTotalValue]
   );
 
-  const onHandleClickControl = (currentStatus: GameStatusType) => {
-    setCountValues([]);
-    setComputerTotalValue(0);
-    setStatus(currentStatus);
-  };
+  const onHandleClickControl = (currentStatus: GameStatusType) => {};
 
   const onHandleClickResult = () => {
-    const computerResult = /* TODO */;
-
-    setComputerTotalValue(computerResult);
-    setStatus("result");
+    const computerResult = /* TODO */ 0;
   };
 
   const onHandleClickAddCard = () => {
-    const newCountValue = /* TODO */;
-    setCountValues((state) => state.concat(newCountValue));
+    const newCountValue = /* TODO */ 0;
   };
 
   return (

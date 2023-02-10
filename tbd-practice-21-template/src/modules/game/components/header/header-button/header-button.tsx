@@ -9,7 +9,7 @@ interface HeaderButtonProps {
 }
 
 function HeaderButton({ started, onHandleClickControl }: HeaderButtonProps) {
-  const onClick = () => onHandleClickControl(/* TODO */);
+  const onClick = () => null; /* TODO */
 
   if (started) {
     return (
