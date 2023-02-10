@@ -21,7 +21,11 @@ export default function GameContainer() {
     [totalValue, computerTotalValue]
   );
 
-  const onHandleClickControl = (currentStatus: GameStatusType) => {};
+  const onHandleClickControl = (currentStatus: GameStatusType) => {
+    setCountValues([]);
+    setComputerTotalValue(0);
+    setStatus(currentStatus);
+  };
 
   const onHandleClickResult = () => {
     const computerResult = /* TODO */ 0;
