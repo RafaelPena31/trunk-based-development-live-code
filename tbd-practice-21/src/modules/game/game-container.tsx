@@ -4,6 +4,7 @@ import GameHeader from "./components/header/game-header";
 import ResultContainer from "./components/result/result-container";
 import { GameStatusType } from "./game-types";
 import "./game-container.css";
+import ControlContainer from "./components/control/control-container";
 
 export default function GameContainer() {
   const [status, setStatus] = useState<GameStatusType>("start");
@@ -12,7 +13,7 @@ export default function GameContainer() {
 
   const totalValue = useMemo(() => /* TODO */ 0, [countValues]);
 
-  const isStarted = useMemo(() => /* TODO */ false, [status]);
+  const isStarted = useMemo(() => /* TODO */ true, [status]);
   const isResult = useMemo(() => /* TODO */ false, [status]);
   const isVictory = useMemo(
     () => /* TODO */ false,
@@ -43,7 +44,10 @@ export default function GameContainer() {
 
       <CardGroup countValueList={countValues} />
 
-      {/* TODO */}
+      <ControlContainer
+        isStarted={isStarted}
+        onHandleClickAddCard={onHandleClickAddCard}
+      />
 
       <ResultContainer isResult={isResult} isVictory={isVictory} />
     </div>
