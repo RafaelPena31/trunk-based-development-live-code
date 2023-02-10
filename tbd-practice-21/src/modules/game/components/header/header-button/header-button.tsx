@@ -2,6 +2,7 @@ import React from "react";
 import { Button } from "antd";
 import { ReloadOutlined, PlayCircleOutlined } from "@ant-design/icons";
 import { GameStatusType } from "modules/game/game-types";
+import { getCurrentGameStatusTypeStart } from "modules/game/game-domain";
 
 interface HeaderButtonProps {
   started: boolean;
@@ -9,7 +10,8 @@ interface HeaderButtonProps {
 }
 
 function HeaderButton({ started, onHandleClickControl }: HeaderButtonProps) {
-  const onClick = () => null; /* TODO */
+  const onClick = () =>
+    onHandleClickControl(getCurrentGameStatusTypeStart(started));
 
   if (started) {
     return (
