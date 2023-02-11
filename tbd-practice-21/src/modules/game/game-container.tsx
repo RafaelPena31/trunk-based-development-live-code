@@ -21,7 +21,14 @@ export default function GameContainer() {
   );
 
   const onHandleClickControl = (currentStatus: GameStatusType) => {
-    /* TODO */
+    const isCurrentStatusStart = currentStatus === "start";
+
+    if (isCurrentStatusStart) {
+      setCountValues([]);
+      setComputerTotalValue(0);
+    }
+
+    setStatus(currentStatus);
   };
 
   const onHandleClickResult = () => {
