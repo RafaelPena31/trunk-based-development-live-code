@@ -5,6 +5,7 @@ import ResultContainer from "./components/result/result-container";
 import { GameStatusType } from "./game-types";
 import "./game-container.css";
 import ControlContainer from "./components/control/control-container";
+import { handleGenerateRandomNumber } from "./game-domain";
 
 export default function GameContainer() {
   const [status, setStatus] = useState<GameStatusType>("start");
@@ -13,7 +14,7 @@ export default function GameContainer() {
 
   const totalValue = useMemo(() => /* TODO */ 0, [countValues]);
 
-  const isStarted = useMemo(() => /* TODO */ true, [status]);
+  const isStarted = useMemo(() => status === "started", [status]);
   const isResult = useMemo(() => /* TODO */ false, [status]);
   const isVictory = useMemo(
     () => /* TODO */ false,
@@ -36,7 +37,8 @@ export default function GameContainer() {
   };
 
   const onHandleClickAddCard = () => {
-    const newCountValue = /* TODO */ 0;
+    const newCountValue = handleGenerateRandomNumber();
+    setCountValues((state) => state.concat(newCountValue));
   };
 
   return (
