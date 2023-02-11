@@ -9,12 +9,11 @@ interface ResultContainerProps {
 const { Title } = Typography;
 
 function ResultContainer({ isResult, isVictory }: ResultContainerProps) {
-  /* TODO */
-  const type = "";
-  const victoryText = "";
+  const type = isVictory ? "success" : "danger";
+  const victoryText = isVictory ? "Você venceu" : "O computador venceu";
 
   if (isResult) {
-    return <Title level={2}>{victoryText}</Title>;
+    return <Title level={2} type={type}>{victoryText}</Title>;
   }
 
   return null;

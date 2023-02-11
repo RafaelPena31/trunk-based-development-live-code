@@ -9,6 +9,7 @@ import {
   getComputerResult,
   getTotalValue,
   handleGenerateRandomNumber,
+  getVictory,
 } from "./game-domain";
 
 export default function GameContainer() {
@@ -19,19 +20,15 @@ export default function GameContainer() {
   const totalValue = useMemo(() => getTotalValue(countValues), [countValues]);
 
   const isStarted = useMemo(() => status === "started", [status]);
-  const isResult = useMemo(() => /* TODO */ false, [status]);
+  const isResult = useMemo(() => status === "result", [status]);
   const isVictory = useMemo(
-    () => /* TODO */ false,
+    () => getVictory(totalValue, computerTotalValue),
     [totalValue, computerTotalValue]
   );
 
   const onHandleClickControl = (currentStatus: GameStatusType) => {
-    const isCurrentStatusStart = currentStatus === "start";
-
-    if (isCurrentStatusStart) {
-      setCountValues([]);
-      setComputerTotalValue(0);
-    }
+    setCountValues([]);
+    setComputerTotalValue(0);
 
     setStatus(currentStatus);
   };
