@@ -8,3 +8,8 @@ export const handleGenerateRandomNumber = () =>
 
 export const getTotalValue = (countValues: number[]) =>
   countValues.reduce((total, num) => total + num, 0);
+
+export const getComputerResult = () =>
+  Array(3)
+    .fill(0)
+    .reduce((total) => total + handleGenerateRandomNumber(), 0);
