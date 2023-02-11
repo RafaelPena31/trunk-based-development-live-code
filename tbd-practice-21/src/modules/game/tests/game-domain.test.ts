@@ -1,4 +1,4 @@
-import { getCurrentGameStatusTypeStart } from "../game-domain";
+import { getCurrentGameStatusTypeStart, getTotalValue } from "../game-domain";
 
 describe("Game Domain", () => {
   describe("getCurrentGameStatusTypeStart", () => {
@@ -12,5 +12,12 @@ describe("Game Domain", () => {
         expect(result).toBe(expected);
       }
     );
+  });
+
+  describe("getTotalValue", () => {
+    test("Should return total value from the list", () => {
+      const expected = getTotalValue([2, 2, 3]);
+      expect(expected).toBe(7);
+    });
   });
 });
