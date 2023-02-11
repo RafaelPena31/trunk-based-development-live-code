@@ -1,11 +1,8 @@
 import GameContainer from "modules/game/game-container";
 
 function App() {
-  return (
-    <div className="app">
-      <GameContainer />
-    </div>
-  );
+  const gamerFlag = false;
+  return <div className="app">{gamerFlag && <GameContainer />}</div>;
 }
 
 export default App;
