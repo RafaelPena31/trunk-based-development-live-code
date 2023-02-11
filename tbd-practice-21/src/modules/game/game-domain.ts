@@ -5,3 +5,6 @@ export const getCurrentGameStatusTypeStart = (isStarted: boolean) =>
 
 export const handleGenerateRandomNumber = () =>
   Math.floor(Math.random() * MAX_RANDOM_CARD_VALUE);
+
+export const getTotalValue = (countValues: number[]) =>
+  countValues.reduce((total, num) => total + num, 0);

@@ -5,14 +5,14 @@ import ResultContainer from "./components/result/result-container";
 import { GameStatusType } from "./game-types";
 import "./game-container.css";
 import ControlContainer from "./components/control/control-container";
-import { handleGenerateRandomNumber } from "./game-domain";
+import { getTotalValue, handleGenerateRandomNumber } from "./game-domain";
 
 export default function GameContainer() {
   const [status, setStatus] = useState<GameStatusType>("start");
   const [countValues, setCountValues] = useState<number[]>([]);
   const [computerTotalValue, setComputerTotalValue] = useState(0);
 
-  const totalValue = useMemo(() => /* TODO */ 0, [countValues]);
+  const totalValue = useMemo(() => getTotalValue(countValues), [countValues]);
 
   const isStarted = useMemo(() => status === "started", [status]);
   const isResult = useMemo(() => /* TODO */ false, [status]);
