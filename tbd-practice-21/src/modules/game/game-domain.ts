@@ -13,3 +13,10 @@ export const getComputerResult = () =>
   Array(3)
     .fill(0)
     .reduce((total) => total + handleGenerateRandomNumber(), 0);
+
+export const getVictory = (totalValue: number, computerTotalValue: number) => {
+  const victoryCondition1 = totalValue > computerTotalValue && totalValue <= 21;
+  const victoryCondition2 = computerTotalValue > 21 && totalValue <= 21;
+
+  return victoryCondition1 || victoryCondition2;
+};
