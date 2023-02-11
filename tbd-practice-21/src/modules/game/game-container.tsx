@@ -5,7 +5,11 @@ import ResultContainer from "./components/result/result-container";
 import { GameStatusType } from "./game-types";
 import "./game-container.css";
 import ControlContainer from "./components/control/control-container";
-import { getTotalValue, handleGenerateRandomNumber } from "./game-domain";
+import {
+  getComputerResult,
+  getTotalValue,
+  handleGenerateRandomNumber,
+} from "./game-domain";
 
 export default function GameContainer() {
   const [status, setStatus] = useState<GameStatusType>("start");
@@ -33,7 +37,10 @@ export default function GameContainer() {
   };
 
   const onHandleClickResult = () => {
-    const computerResult = /* TODO */ 0;
+    const computerResult = getComputerResult();
+    setComputerTotalValue(computerResult);
+
+    setStatus("result");
   };
 
   const onHandleClickAddCard = () => {
